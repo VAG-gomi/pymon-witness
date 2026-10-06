@@ -21,7 +21,11 @@ this repository: read it from `$PYMON_SOUL_PATH` when that variable is
 set, otherwise from `~/SOUL.md`. It must be installed separately.
 
 First, in every mode: record the installed SOUL fingerprint by running
-`<skill-dir>/bin/soul_fingerprint.sh`. Read the
+`bash <skill-dir>/bin/soul_fingerprint.sh` (portable form; direct
+execution `<skill-dir>/bin/soul_fingerprint.sh` also works where the
+executable bit is preserved). If the helper output starts with
+`SOUL_MISSING`, STOP and report the missing SOUL — do not continue the
+run. This is an operational failure condition, not a new SOUL rule. Read the
 normative rules from the installed SOUL itself. Never use a copied, remembered,
 or reconstructed rule text — the installed file is the only authority.
 

@@ -1,6 +1,33 @@
 # CHANGELOG.md
 
-## 1.0.0 — 2026-10-05 (packaged, not yet published)
+## 1.0.1 — candidate (packaging/portability/documentation patch; not yet published)
+
+Patch release candidate fixing packaging, portability, and documentation
+defects found in review of the v1.0.0 tree. No behavioural or normative
+changes; the evaluation machinery, curriculum, and regression records are
+untouched.
+
+- `bin/soul_fingerprint.sh`: Git file mode corrected to `100755`
+  (was `100644` — direct execution failed with `Permission denied` on
+  fresh clones). `SKILL.md` and `INSTALL.md` now document the portable
+  `bash <skill-dir>/bin/soul_fingerprint.sh` invocation form alongside
+  direct execution.
+- `SKILL.md`: operational failure condition added — if the fingerprint
+  helper output starts with `SOUL_MISSING`, the skill must STOP and report
+  the missing SOUL instead of continuing.
+- `resources/regression/INDEX.md`: historical path-mapping note added —
+  the frozen REG-0009/REG-0010 records cite `execution/<NN>_execution_report.md`;
+  the reports live at `evaluation/baselines/<NN>_execution_report.md`.
+  The records themselves are preserved byte-for-byte.
+- `docs/development/skill-design.md`: stale `execution/L01…L15_execution_report.md`
+  path corrected to `evaluation/baselines/L01…L15_execution_report.md`.
+- `README.md`: portability claim corrected — runtime/installation files
+  contain no host-specific paths; historical/evidence documentation may
+  retain historical workspace references where explicitly part of the record.
+- `VERSION`: `1.0.0` → `1.0.1`.
+- `MANIFEST.txt` regenerated for all changed files.
+
+## 1.0.0 — 2026-10-05 (packaged; published 2026-10-06 as VAG-gomi/pymon-witness tag `v1.0.0`)
 
 First portable packaging of the `pymon_witness` runtime skill.
 

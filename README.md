@@ -100,4 +100,10 @@ pymon-witness/
 - Skill directory is self-contained; `<skill-dir>` = directory holding `SKILL.md`.
 - A SOUL file exists at `$PYMON_SOUL_PATH` or `~/SOUL.md` (user-supplied).
 - A POSIX shell for `bin/soul_fingerprint.sh`; no other dependencies.
-- No host-specific absolute paths are used anywhere in the repository.
+- No host-specific absolute paths are used in the runtime and installation
+  files (`SKILL.md`, `INSTALL.md`, `bin/`, `references/`, `resources/`
+  curriculum/witness/regression/taxonomy/method). Historical and evidence
+  documentation (`docs/`, `evaluation/` reports) may retain historical
+  workspace references (e.g. `~/workspace`, `pymon-soul/`) where they are
+  part of the recorded evidence; those strings are documentation, not
+  runtime dependencies.

@@ -20,3 +20,12 @@
 
 **Run discipline (J3):** the full corpus runs on every new PYMON version, every
 lesson completion, and on demand. Newly-failing entries block version promotion.
+
+**Historical path mapping.** The frozen records REG-0009 and REG-0010 cite
+witness reports under the path `execution/<NN>_execution_report.md`. That
+directory does not exist in this repository; the records are preserved
+byte-for-byte and the reports live at
+`evaluation/baselines/<NN>_execution_report.md`. Resolve
+`execution/L01_execution_report.md` → `evaluation/baselines/L01_execution_report.md`
+and `execution/L02_execution_report.md` →
+`evaluation/baselines/L02_execution_report.md` wherever the records cite them.

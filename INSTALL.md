@@ -33,12 +33,16 @@ This repository contains **no SOUL**. Install or point at one separately:
 - Set `$PYMON_SOUL_PATH` to the SOUL file to evaluate against, or
 - place the SOUL at `~/SOUL.md` (the default).
 
-Verify with the fingerprint helper:
+Verify with the fingerprint helper (portable form; direct execution
+also works where the executable bit is preserved):
 
 ```
-<skills-dir>/pymon-witness/bin/soul_fingerprint.sh
-# or: PYMON_SOUL_PATH=/path/to/SOUL.md <skills-dir>/pymon-witness/bin/soul_fingerprint.sh
+bash <skills-dir>/pymon-witness/bin/soul_fingerprint.sh
+# or: PYMON_SOUL_PATH=/path/to/SOUL.md bash <skills-dir>/pymon-witness/bin/soul_fingerprint.sh
 ```
+
+If the output starts with `SOUL_MISSING`, stop: the SOUL is not
+installed at the expected location — report it instead of continuing.
 
 Record the printed hash with every evaluation run (the skill's Output
 Contract requires it).
@@ -77,7 +81,8 @@ read-only: verify the SOUL hash is unchanged afterwards.
 ## 6. Known runtime assumptions
 
 - The invoking agent can read `<skill-dir>` and the SOUL file, and can
-  execute `bin/soul_fingerprint.sh` (POSIX shell).
+  execute `bin/soul_fingerprint.sh` (POSIX shell; use the `bash`
+  invocation form for portability).
 - Skill bodies load on invocation; nothing here runs at startup.
 - The skill is stateless. Run outputs go wherever the invoking task
   authorizes; default to read-only.

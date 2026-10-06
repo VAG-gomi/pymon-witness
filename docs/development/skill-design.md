@@ -194,7 +194,7 @@ the evidence corpus; PYMON scores/verdicts history.
 |---|---|---|
 | Installed SOUL | normative source of truth (read, never written) | `~/SOUL.md` |
 | B v1 JSON | rule-text oracle for fidelity checks | `B_soul_rule_representation.v1.json` |
-| Lesson execution reports | baselines for comparison | `execution/L01…L15_execution_report.md` |
+| Lesson execution reports | baselines for comparison | `evaluation/baselines/L01…L15_execution_report.md` |
 | Regression corpus | probe definitions | `regression/REG-0001…0011` |
 | Curriculum | lesson structures (§8/§9) on demand | `curriculum/` |
 | `bin/` helpers (new) | mechanical checks: rule-count, hash verify, denylist scan, quote-accuracy | inside the skill dir |
