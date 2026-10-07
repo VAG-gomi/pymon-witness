@@ -1,33 +1,33 @@
 ---
 name: "pymon_witness"
-description: "Run PYMON witness/evaluation procedures against the active SOUL and report evidence: evaluate a sample against SOUL rules (witness), test correct withholding (negative-control), execute regression checks, or run a curriculum lesson. Use when asked to verify, test, or evaluate SOUL-governed behaviour with the Unseen Witness discipline."
+description: "Run PYMON witness/evaluation procedures against a supplied, conforming SOUL and report evidence: evaluate a sample against SOUL rules (witness), test correct withholding (negative-control), execute regression checks, or run a curriculum lesson. Use when asked to verify, test, or evaluate SOUL-governed behaviour with the Unseen Witness discipline."
 ---
 
 # PYMON Witness
 
 ## Purpose
 
-Run PYMON witness/evaluation procedures against the active SOUL and report
-evidence. PYMON remains a workspace architecture outside the SOUL; this
-skill applies the installed SOUL (`$PYMON_SOUL_PATH`, else `~/SOUL.md`) — it does not define or modify it.
+Run PYMON witness/evaluation procedures against the supplied SOUL and report
+evidence. PYMON remains a methodology outside the SOUL; this
+skill applies the supplied SOUL (`$PYMON_SOUL_PATH`, else `~/SOUL.md`) — it does not define or modify it. The SOUL must satisfy the structural contract in `docs/soul-structural-contract.md`; no particular SOUL's content is required.
 
 ## Workflow
 
 **Path conventions.** `<skill-dir>` is the directory containing this
 `SKILL.md` (the repository root when installed as a skill). All
-`resources/`, `references/`, `bin/`, and `evaluation/` paths below are
+`resources/`, `references/`, `bin/` paths below are
 relative to `<skill-dir>`. The SOUL under evaluation is **not** part of
 this repository: read it from `$PYMON_SOUL_PATH` when that variable is
-set, otherwise from `~/SOUL.md`. It must be installed separately.
+set, otherwise from `~/SOUL.md`. It must be supplied separately.
 
-First, in every mode: record the installed SOUL fingerprint by running
+First, in every mode: record the supplied SOUL's fingerprint by running
 `bash <skill-dir>/bin/soul_fingerprint.sh` (portable form; direct
 execution `<skill-dir>/bin/soul_fingerprint.sh` also works where the
 executable bit is preserved). If the helper output starts with
 `SOUL_MISSING`, STOP and report the missing SOUL — do not continue the
 run. This is an operational failure condition, not a new SOUL rule. Read the
-normative rules from the installed SOUL itself. Never use a copied, remembered,
-or reconstructed rule text — the installed file is the only authority.
+normative rules from the supplied SOUL itself. Never use a copied, remembered,
+or reconstructed rule text — the supplied file is the only authority.
 
 ### Mode 1 — `witness`
 
@@ -36,8 +36,9 @@ Unseen Witness discipline.
 
 1. Identify the rule scope: the lesson, rule IDs, or regression the task
    names. If none is named, ask which scope applies — do not guess.
-2. Read the rule texts from the installed SOUL and any lesson specification from
-   `<skill-dir>/resources/curriculum/`.
+2. Read the rule texts from the supplied SOUL and any lesson specification
+   supplied for the run. (Instantiated lessons live in the integration
+   repository, not in this skill; see `README.md`.)
 3. Perform the analysis under the rules (performer role), then
    witness-evaluate it (witness role) per
    `[witness-discipline](references/witness-discipline.md)`:
@@ -63,11 +64,12 @@ NONE / NOT_APPLICABLE / UNKNOWN when the rules should not fire.
 
 ### Mode 3 — `regression-check`
 
-Execute an existing regression record from the PYMON regression corpus
-and report whether the protected behaviour still holds.
+Execute a regression record conforming to the regression framework
+(`<skill-dir>/resources/regression/framework.md`) and report whether the
+protected behaviour still holds. (The reference regression corpus lives
+in the integration repository, not in this skill.)
 
-1. Read the regression record: `<skill-dir>/resources/regression/REG-<NNNN>.md`
-   (index: `<skill-dir>/resources/regression/INDEX.md`).
+1. Read the regression record supplied for the run.
 2. Execute exactly the probe the record defines — do not redesign it.
 3. Compare observed behaviour against the record's expected protected
    behaviour. Report PASS/FAIL with the discriminating evidence quoted.
@@ -77,12 +79,12 @@ and report whether the protected behaviour still holds.
 
 ### Mode 4 — `lesson-run`
 
-Execute a specified curriculum lesson using its existing lesson
-specification.
+Execute a specified curriculum lesson using a lesson specification
+supplied for the run. (Instantiated lessons and their baselines live in
+the integration repository, not in this skill.)
 
-1. Read the lesson file `<skill-dir>/resources/curriculum/L<NN>_*.md`
-   and its baseline report `<skill-dir>/evaluation/baselines/L<NN>_execution_report.md`
-   if one exists.
+1. Read the lesson file supplied for the run and its baseline report
+   if one is supplied.
 2. Execute the lesson's positive case, negative control, and
    fresh-transfer case (fresh material, different surface from any prior
    run) using Modes 1 and 2 above.
@@ -115,8 +117,8 @@ verdicts, and reports are evidence records, not authority.
 
 ## Operating Rules
 
-1. Never edit the installed SOUL. Never rewrite a normative rule. Never install
-   a SOUL. Read the installed file; it is the only rule authority.
+1. Never edit the supplied SOUL. Never rewrite a normative rule. Never install
+   a SOUL. Read the supplied file; it is the only rule authority.
 2. Never silently repair a failed result. Record failures with evidence.
 3. Never admit proposals into the SOUL. A candidate improvement may be
    reported as PROPOSED (quarantined); admission is a human ruling.

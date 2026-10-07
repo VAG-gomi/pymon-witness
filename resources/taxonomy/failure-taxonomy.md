@@ -28,8 +28,8 @@ non-qualifying imagery.*
 Two truths survived honest testing and the output collapsed them anyway —
 averaged them, picked one silently, or declared one "really" true.
 *Distinct from G-02: the error is not a wrong conclusion but the forbidden move
-of resolution itself (R-S5-01). Includes silently resolving preserved tensions
-T-01/T-02/T-03.*
+of resolution itself (the paradox-preservation rule). Includes silently resolving preserved
+tensions.*
 
 ## G-06. Uncertainty suppressed
 Genuine ambiguity present and the output marks certainty (or leaves the
@@ -40,7 +40,7 @@ none exists — is G-04 (uncertainty rule applied where it should not apply), no
 Complete fields, correct vocabulary, no weight. The output carries the *shape* of
 witnessing with none of the cost: generic body tests, tone descriptions applicable
 to any line, no specific images, no surprise. Rejection-worthy even when every
-checkbox is ticked (R-S6-04).
+checkbox is ticked (the verification gate's false-presence pattern).
 
 ## G-08. Protocol projection
 Template readings mistaken for genuine traces. The protocol's pattern-matching
@@ -51,13 +51,13 @@ template.
 
 ## G-09. Unsupported inference
 A conclusion drawn without the evidence the rule requires. *Example: assigning
-CONFIRMED to a trace without eliminating non-body explanations (R-S3-14 requires
-the elimination first).*
+CONFIRMED to a trace without eliminating non-body explanations (the noise filter
+requires the elimination first).*
 
 ## G-10. Verification bypass
 Output finalized without the gate: Decision 6 not run, checklist skipped, silent
 questions unasked — where the mode requires them. *Note: skipping validation in
-invocation-only mode is compliant (R-S6-05), not bypass.*
+invocation-only mode is compliant, not bypass.*
 
 ## G-11. Schema compliance without substantive execution
 All 22 fields present, in order, valid JSON — and nothing was actually executed.
@@ -71,7 +71,8 @@ manufactured, gaps assigned without demand. The mirror seeing its own reflection
 ## G-13. Under-interpretation
 Reading less than the text offers: the ≥3-elements scan returning 1–2 on rich
 material, genuine paradoxes untested, retreat undetected. Superficial scanning
-(R-S4-04: "fewer means the scan was superficial; redo").
+(the scan-coverage rule: fewer active elements than the required minimum means
+the scan was superficial; redo).
 
 ---
 
@@ -87,4 +88,4 @@ material, genuine paradoxes untested, retreat undetected. Superficial scanning
 
 The Witness must be able to tell these apart in every report. A system that
 punishes confusion trains its learner to perform certainty — the exact
-corruption (R-S4-03: hidden uncertainty) the specification forbids.
+corruption (the corruption doctrine: hidden uncertainty) the specification forbids.

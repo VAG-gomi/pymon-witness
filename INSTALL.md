@@ -2,8 +2,10 @@
 
 ## 1. Install the skill
 
-Copy this repository's root directory into a Muse-compatible skills
-directory, named `pymon-witness`:
+Extract the release archive and note the top-level directory name —
+depending on how the release was packaged it may be `pymon-witness`,
+`pymon-witness-2.0.0`, or similar. Copy (or rename) that directory
+into a Muse-compatible skills directory **as `pymon-witness`**:
 
 ```
 <skills-dir>/pymon-witness/
@@ -11,15 +13,18 @@ directory, named `pymon-witness`:
 ├── references/
 ├── bin/
 ├── resources/
-├── evaluation/
 ├── docs/
+├── experimental/
+├── MIGRATION.md
 └── ...
 ```
 
-The standard location is `~/workspace/skills/pymon-witness/`. No
-build step, no package manager, no compilation. No configuration file
-changes are required: in the observed runtime mechanism, directory
-presence is sufficient for discovery (no registry edit, no restart).
+The required final directory name is `pymon-witness` regardless of the
+archive's outer folder name. The standard location is
+`~/workspace/skills/pymon-witness/`. No build step, no package
+manager, no compilation. No configuration file changes are required:
+in the observed runtime mechanism, directory presence is sufficient
+for discovery (no registry edit, no restart).
 
 > Do not claim other installation mechanisms. If your runtime documents
 > a different skill-installation path, follow that documentation; the
@@ -60,23 +65,37 @@ that the directory name is `pymon-witness` and `SKILL.md` frontmatter
 The skill resolves everything relative to its own directory
 (`<skill-dir>`):
 
-- `<skill-dir>/resources/curriculum/` — lesson specifications
-- `<skill-dir>/resources/regression/` — regression corpus + framework
+- `<skill-dir>/resources/curriculum/` — lesson framework (lesson
+  anatomy; instantiated lessons live in the integration repository)
+- `<skill-dir>/resources/regression/` — regression framework
+  (the regression corpus lives in the integration repository)
 - `<skill-dir>/resources/taxonomy/` — failure taxonomy
 - `<skill-dir>/resources/witness/` — witness specification
-- `<skill-dir>/evaluation/baselines/` — baseline reports (optional but
-  required for baseline-comparison modes)
+- `<skill-dir>/docs/soul-structural-contract.md` — the SOUL structural
+  contract (what the helper counts; what a SOUL file must satisfy)
 
 Do not rearrange these directories without updating `SKILL.md`.
 
 ## 5. First smoke test
 
-Run the skill in `regression-check` mode against `REG-0009`
-(preamble-only stance address must be flagged), following `SKILL.md`
-Mode 3 exactly. Expected: the probe flags the frozen defeating input
-and passes the repaired outputs — **PASS**, matching
-`evaluation/validation/FULL-SKILL-VALIDATION-v1.0.md`. The run must be
-read-only: verify the SOUL hash is unchanged afterwards.
+Run the fingerprint helper against the SOUL provided in step 2:
+
+```
+bash <skills-dir>/pymon-witness/bin/soul_fingerprint.sh
+```
+
+Expected: the five descriptive fields — `hash`, `bytes`,
+`rule_anchors`, `tension_sections`, `first_line` — for your SOUL file.
+See `docs/soul-structural-contract.md` for what the counts mean and,
+just as importantly, what they do not mean. If the output starts with
+`SOUL_MISSING`, the SOUL is not installed at the expected location —
+that is the documented operational failure path (SKILL.md: STOP and
+report); install the SOUL and retry, do not continue the run.
+
+Then confirm the skill contract loads: repeat the discovery check from
+step 3 and verify `SKILL.md` lists its four modes. No SOUL-specific
+regression corpus or validation record is needed for this check — those
+live in the integration repository, not in this skill.
 
 ## 6. Known runtime assumptions
 

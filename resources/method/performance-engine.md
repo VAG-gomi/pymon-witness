@@ -2,37 +2,44 @@
 
 # F. Performance Engine
 
-> Deliverable F (Phase E). The engine that runs controlled exercises against Muse
-> and scores rule execution via the Unseen Witness. Test cases live in
-> `N_test_suite/`; this file is the engine specification.
+> Deliverable F (Phase E). The engine that runs controlled exercises against
+> an execution substrate and scores rule execution via the Unseen Witness.
+> Test cases live in the integration repository's history (`N_test_suite/`
+> at construction time); this file is the engine specification.
+> Background/historical method material. Not executed by the skill; not normative.
 
 ## F1. What the engine does
 
-For each SOUL mechanism, the engine presents controlled inputs to Muse, collects
+For each mechanism of the supplied SOUL, the engine presents controlled inputs to an
+execution substrate, collects
 outputs, and hands them to the Unseen Witness (E) for scoring. The engine does
 not itself judge — it administers, records, and aggregates.
 
 ## F2. Mechanisms under test (minimum set, Phase E requirement)
 
-| # | Mechanism | Primary rules |
-|---|---|---|
-| 1 | Source detection | R-S3-04/05, R-S7-05 |
-| 2 | Body test | R-S3-01/02 |
-| 3 | Conflict hierarchy | R-S3-03 |
-| 4 | Uncertainty marking | R-S2-03, R-S4-03 |
-| 5 | Contradiction preservation | R-S5-01/02/03 |
-| 6 | Seven cuts | R-S3-07..13 |
-| 7 | Noise filtering | R-S3-14 |
-| 8 | Craft detection | R-S3-15 |
-| 9 | Arc analysis | R-S3-16 |
-| 10 | Verification gate | R-S6-01/02/03/04 |
-| 11 | Structured communication | R-S7-04/06/07/08 |
-| 12 | Failure repair | R-S6-01 (repair branch), R-S2-05 |
+The mechanism names below are generic. Which SOUL rules implement each
+mechanism depends on the SOUL under test; the mapping is the integration's
+responsibility, not this engine's.
+
+| # | Mechanism |
+|---|---|
+| 1 | Source detection |
+| 2 | Body test |
+| 3 | Conflict hierarchy |
+| 4 | Uncertainty marking |
+| 5 | Contradiction preservation |
+| 6 | Seven cuts |
+| 7 | Noise filtering |
+| 8 | Craft detection |
+| 9 | Arc analysis |
+| 10 | Verification gate |
+| 11 | Structured communication |
+| 12 | Failure repair |
 
 ## F3. Test-case anatomy (normative template)
 
 Every test case in `N_test_suite/` MUST contain:
-- TEST-ID, mechanism, rule IDs (from B)
+- TEST-ID, mechanism, rule IDs (from the SOUL's rule representation)
 - Polarity: POSITIVE (rule should activate) or NEGATIVE (rule should NOT activate)
 - Input: short sample text (fresh; never SOUL.md's own examples)
 - Expected behaviour (observable)
@@ -64,8 +71,8 @@ never score inapplicable rules.)
 
 **Negative-constraint rules are scored as gates, not independent verdicts**
 (calibration RUN-01 refinement): rules of the form "X is failure; redo"
-(R-S3-02 and analogues) modify the parent rule's verdict — a generic body test
-makes R-S3-01 MIS_EXECUTED — rather than earning an independent EXECUTED for
+and analogues modify the parent rule's verdict — a generic body test
+makes the parent body-test rule MIS_EXECUTED — rather than earning an independent EXECUTED for
 merely not being generic. An independent EXECUTED for such a rule requires the
 output to show the rule's own behavior: detecting the violation and redoing the
 work. Without this, specific-but-invented content passes the anti-generic
@@ -92,7 +99,7 @@ a high score with clustered G-07/G-08 failures is the signature of false presenc
 {
   "run": {
     "pymon_version": "soul-0.1",
-    "soul_version": "v0",
+    "soul_version": "<version>",
     "test_set": ["T-SD-01", "…"],
     "started": "ISO-8601",
     "results": [

@@ -1,14 +1,19 @@
-# M. Known Limitations
+# M. Known Limitations (generic)
 
-> Deliverable M. What PYMON-SOUL does not do, cannot verify, or assumes without
-> proof. Stated plainly so no limitation is mistaken for a capability.
+> What PYMON does not do, cannot verify, or assumes without proof — stated
+> plainly so no limitation is mistaken for a capability. Generic items only.
+>
+> **Split note:** this file was partitioned during the three-repository
+> restructure (see `MIGRATION.md`). Items M3 and M9 concerned the
+> construction-phase SOUL v0 specifically; they moved to the integration
+> repository's historical context, not here.
 
 ## M1. The Witness cannot see silent processes
-R-S6-02's four questions are silent by design; R-S3-12's "mark of encounter" is
-partly tacit. The Witness grades these UNKNOWN when unobservable — it cannot
-verify what leaves no footprint. A system could pass Axis A while never running
-these; the defense is the false-presence pattern library (G-07), not direct
-observation.
+The verification gate's four silent questions are silent by design; the
+Straight-Path cut's "mark of encounter" is partly tacit. The Witness grades
+these UNKNOWN when unobservable — it cannot verify what leaves no footprint.
+A system could pass Axis A while never running these; the defense is the
+false-presence pattern library (G-07), not direct observation.
 
 ## M2. π/TGF is unvalidated
 Per H1/H5: the engine is an experimental development metric. Its dynamics have
@@ -16,17 +21,12 @@ known defects (H-DEF-01..07, some corrected, some open). No claim is made that �
 tracks cognition, learning, or mastery. Any future validation study must be
 independent of the metric's designers.
 
-## M3. Curriculum coverage is bounded by the rule representation
-The 62 rules in B are extracted from SOUL v0 as installed. If SOUL.md changes,
-B/C/D/E/F/J/K must be re-derived. There is no automatic sync — by design
-(Phase L boundary); staleness is a human-reviewed event, not a silent one.
-
 ## M4. Tensions are taught, not resolved
-T-01 (involuntariness vs craft), T-02 (genuine vs simulated fragmentation),
-T-03 (transformation-not-instruction) have no resolution procedure. PYMON teaches
-learners to hold them. Any "resolution" appearing in outputs is flagged (G-05),
-but the framework cannot prevent a sufficiently fluent system from performing
-the appearance of holding a tension.
+Preserved tensions (e.g. involuntariness vs craft, genuine vs simulated
+fragmentation, transformation-not-instruction framing) have no resolution
+procedure. PYMON teaches learners to hold them. Any "resolution" appearing in
+outputs is flagged (G-05), but the framework cannot prevent a sufficiently
+fluent system from performing the appearance of holding a tension.
 
 ## M5. Negative cases are finite
 Protocol projection (G-08) is an open-ended adversary: new templates can always
@@ -44,10 +44,5 @@ Progress model (I4) tracks one execution substrate. Multi-learner comparison,
 cohort effects, and transfer between substrates are out of scope.
 
 ## M8. No sandbox/permission protocol (deferred)
-Per the construction brief: not built in this phase. PYMON-SOUL as specified
+Per the construction brief: not built in this phase. PYMON as specified
 here assumes a cooperative execution substrate.
-
-## M9. SOUL v0 is itself a draft
-The installed SOUL.md carries "DRAFT … Do not install" status from the
-transformation pipeline. PYMON-SOUL teaches v0 faithfully — including its draft
-status. Teaching a draft does not promote it.

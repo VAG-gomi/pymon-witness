@@ -1,22 +1,25 @@
 # BOUNDARIES.md — authority relationships in pymon-witness
 
 Concise definitions. The authority relationship is stated after each.
+Rewritten for the generic skill (v2.0.0): no particular SOUL is named or
+required anywhere below.
 
 ## SOUL
 
-The normative behavioural configuration under evaluation
-(e.g. the installed `SOUL.md`). **Authority: supreme over the
-evaluation.** Read by the skill, never written by it. Not included in
-this repository.
+The normative behavioural configuration under evaluation — the SOUL
+file supplied at run time (`$PYMON_SOUL_PATH`, else `~/SOUL.md`).
+**Authority: supreme over the evaluation.** Read by the skill, never
+written by it. Not included in this repository; no particular SOUL is
+required by it.
 
 ## SKILL (`pymon_witness`)
 
 The documented evaluation procedure an agent follows on invocation
 (four modes: `witness`, `negative-control`, `regression-check`,
-`lesson-run`). **Authority: procedural only.** It applies the SOUL; it
-does not define, modify, install, or duplicate it as normative content.
-Stateless; confers no autonomy, identity, or standing beyond the
-invocation.
+`lesson-run`). **Authority: procedural only.** It applies the supplied
+SOUL; it does not define, modify, install, or duplicate any SOUL as
+normative content. Stateless; confers no autonomy, identity, or
+standing beyond the invocation.
 
 ## PYMON METHOD
 
@@ -26,27 +29,30 @@ failure taxonomy, human-loop protocol, export schema
 **Authority: methodological.** They say *how* to evaluate, never *what*
 the rules are.
 
-## CURRICULUM
+## CURRICULUM FRAMEWORK
 
-The 15 lesson specifications (`resources/curriculum/`).
-**Authority: pedagogical.** Rule quotations inside are reference
-material; the installed SOUL is the sole normative source. Tests are
-invalid if their expected rule text silently diverges from the active
-SOUL. The curriculum is not a second SOUL.
+The generic lesson anatomy (`resources/curriculum/framework.md`):
+section structure, the §8→§9 correspondence rule, the proposal
+pipeline. **Authority: structural.** It defines what a lesson *is*,
+never what any lesson teaches. Instantiated lessons live in the
+integration repository, not here; this repository's framework is not a
+curriculum.
 
 ## EVALUATION
 
-Baselines, calibration runs, test suites, validation records
-(`evaluation/`). **Authority: evidential.** Records of what was
-observed, pending human ruling. Never normative; never a basis for
-changing the SOUL.
+Evaluation records live in the integration repository, where they are
+evidence *about a specific skill×SOUL pair*. **Authority: evidential.**
+Records of what was observed, pending human ruling. Never normative;
+never a basis for changing any SOUL. This repository makes no
+pair-specific evaluative claims.
 
 ## REGRESSION
 
-The regression framework and corpus (`resources/regression/`).
-**Authority: protective.** Guards that must keep passing; a failing
-guard blocks promotion but does not itself rewrite anything. Guards are
-executed exactly as recorded — never redesigned mid-run.
+The regression *framework* (`resources/regression/framework.md`):
+record format, PASS/FLAGGED semantics. **Authority: protective** (of the
+procedure). The corpus — the actual guards — lives in the integration
+repository. Guards are executed exactly as recorded — never redesigned
+mid-run.
 
 ## EVIDENCE
 
@@ -58,15 +64,16 @@ nothing beyond it and changes no rule.
 ## EXPERIMENTAL MATERIAL
 
 Anything not validated as evaluation procedure — notably π/TGF-style
-metrics. **Authority: none.** Excluded from v1.0. If ever retained, it
-lives in `experimental/` explicitly labelled as non-normative, and it
-must never override witness evidence or enter the skill contract.
+metrics. **Authority: none.** Excluded. If ever retained, it lives in
+`experimental/` explicitly labelled as non-normative, and it must never
+override witness evidence or enter the skill contract.
 
 ## The standing form
 
-**PYMON workspace architecture ≠ PYMON runtime Skill ≠ Muse Agent ≠ SOUL.**
+**PYMON methodology ≠ PYMON runtime Skill ≠ Muse Agent ≠ SOUL.**
 
 What the repository must never imply: that PYMON is an agent; that
-PYMON is (or ships) the SOUL; that the skill contains the whole
-workspace; that experimental evidence is normative; that Muse-specific
-paths are universal.
+PYMON is (or ships, or requires) any particular SOUL; that the skill
+contains the whole project; that experimental evidence is normative;
+that Muse-specific paths are universal; that the reference integration
+is mandatory for PYMON users.

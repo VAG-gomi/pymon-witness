@@ -1,8 +1,9 @@
 # A. PYMON-SOUL Architecture
 
-> Deliverable A of the PYMON-SOUL construction phase. SOUL v0 = the installed
-> `~/SOUL.md` (USC Witness Configuration, draft). This document is the educational /
-> performance layer. It does not modify SOUL.md.
+> Deliverable A of the PYMON-SOUL construction phase (built against SOUL v0,
+> the installed `~/SOUL.md` at construction time). This document is the
+> educational / performance layer. It does not modify any SOUL. References
+> to "SOUL v0" below are historical — read "the supplied SOUL".
 
 ## A1. Layer definitions
 
@@ -26,12 +27,12 @@
                          │ lessons, exercises, scores
 ┌────────────────────────┴────────────────────────────────────┐
 │ MUSE — execution substrate                                   │
-│ Executes SOUL v0 rules against exercises and tests.          │
+│ Executes the supplied SOUL's rules against exercises and tests.   │
 │ Produces outputs the Witness evaluates.                      │
 └────────────────────────▲────────────────────────────────────┘
                          │ rule-execution traces
 ┌────────────────────────┴────────────────────────────────────┐
-│ SOUL.md — cognitive specification (v0, UNCHANGED)             │
+│ SOUL — cognitive specification (supplied; UNCHANGED by PYMON)      │
 │ The rules. PYMON teaches them; PYMON never rewrites them.    │
 └─────────────────────────────────────────────────────────────┘
 ```
@@ -47,7 +48,7 @@ formatting success as cognition success (Phase L boundary).
 ## A2. The learning loop (normative)
 
 ```
-SOUL RULE (B_soul_rule_representation.json, cited by ID)
+SOUL RULE (the SOUL's rule representation, cited by ID)
   → PYMON lesson (D_curriculum, dependency-ordered)
     → MUSE execution (exercise or test input)
       → UNSEEN WITNESS evaluation (OBSERVED / INFERRED / UNKNOWN)
@@ -60,7 +61,14 @@ Human correction is authoritative over PYMON scores. A human correction is recor
 first as training evidence; it becomes a candidate rule change only as a PROPOSAL
 requiring explicit human review — never automatically.
 
-## A3. Component map (deliverables → files)
+## A3. Component map (construction-phase deliverables — historical)
+
+The table below maps the construction-phase deliverables to their
+workspace files at construction time. It is preserved as history. In
+the three-repository layout: the generic frameworks (A, E, F, G, I, J,
+K, M) live in this repository; the SOUL-specific instantiations (B, C,
+D, N) and the regression corpus belong to the integration repository;
+the archive is retained-historical.
 
 | Deliverable | File(s) |
 |---|---|

@@ -1,9 +1,30 @@
-# C. Dependency Graph — SOUL v0 rule dependencies → lesson derivation
+# C. Dependency Graph — method and reference instantiation
 
-> Built from `B_soul_rule_representation.json`. No invented rules. Tensions (T-01..T-03)
-> are nodes with no resolution edge — they are taught as tensions, not solved.
+> **Status in this repository: method (generic) + reference illustration
+> (historical, non-normative).** The *method* — derive lesson order from a
+> SOUL's rule-dependency graph; no cycles in prerequisite edges; tensions
+> as nodes with no resolution edge — is generic and belongs here. The
+> *instantiation below* was built from SOUL v0 (`B_soul_rule_representation.json`)
+> during the construction phase. It is preserved as the worked example that
+> the method was validated against — not as a claim about any other SOUL,
+> and not as normative content of this repository. The live instantiated
+> graph for any specific SOUL is the integration repository's
+> responsibility.
 
-## C1. Dependency edges (prerequisite → dependent)
+## C0. The method (generic)
+
+1. Represent the SOUL's rules and preserved tensions as nodes.
+2. Draw prerequisite edges (prerequisite → dependent); tensions get no
+   resolution edge — they are taught as tensions, not solved.
+3. Verify no cycles in prerequisite edges.
+4. Derive lesson order from the graph (dependency order, not the SOUL's
+   section order); rules that cannot be taught independently are grouped.
+5. Classify each rule/node for practice type: repeated practice,
+   contradiction tests, verification.
+
+## C1. Reference instantiation (SOUL v0) — illustrative, non-normative
+
+### Dependency edges (prerequisite → dependent)
 
 **Foundational layer (no prerequisites):**
 - R-S1-01/04/05/06/07/08 (stances + Oath) → everything. Nothing in-spec above them.
